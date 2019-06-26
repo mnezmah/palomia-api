@@ -1,6 +1,6 @@
 const express = require('express')
-const db = require ('./db')
-const module = require ('./team/model')
+const db = require ('./db.js')
+const Team = require ('./team/model.js')
 const app = express()
 
 

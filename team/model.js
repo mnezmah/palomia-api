@@ -1,6 +1,14 @@
 const sequelize = require('sequelize')
-const db = require ('..db')
+const db = require('../db.js')
 
-const Team = db.define('team', {name:sequelize.STRING})
+const Team = db.define(
+  'team',
+  {
+    team_name: {
+      type: sequelize.STRING
+    }
+  },
+  { tableName: 'football_teams' }
+)
 
-module.exports = model
+module.exports = Team
