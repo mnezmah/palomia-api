@@ -1,5 +1,6 @@
 const express = require('express')
 const db = require ('./db')
+const module = require ('./team/model')
 const app = express()
 
 
