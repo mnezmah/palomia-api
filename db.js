@@ -7,7 +7,7 @@ const sequelize = new Sequelize(databaseUrl)
 
 sequelize
   .sync()
-  .then(() => conslole.log('db schema updated'))
-  .catch(() => console.error )
+  .then(() => console.log('db schema updated'))
+  .catch(console.error)
 
   module.exports = sequelize
