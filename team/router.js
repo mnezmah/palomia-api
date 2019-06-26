@@ -4,23 +4,16 @@ const Team = require('./model')
 const router = new Router()
 
 
-router.get('/team', (req, res, next) => {
-  Team.findAll()
-      .then(teams => res.status(200).send(teams))
-      .catch(err => res.status(500).next(err))
-})
-// router.get('/team', (req, res, next) => {
-//   Team.findAll()
-//     .then(teams => {
-//       res.status(200)
-//         // .json({ teams })
-//         .send(teams)
-//     })
-//     .catch(err => res
-//       .status(500)
-//       .next(err)
-//     )
-// })
+
+
+router.get(
+  '/team',
+  (req, res, next) =>
+    Team
+      .findAll()
+      .then(teams => res.send(teams))
+      .catch(err => next(err))
+)
 
 router.post('/team', (req, res) => {
   Team.create(req.body)
